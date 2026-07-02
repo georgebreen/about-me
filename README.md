@@ -327,3 +327,6 @@ Made by the folks at Rackspace and trusted by the companies that manage your 401
 
 ### [rymdport](https://github.com/Jacalz/rymdport)
 A cross-platform GUI for [magic-wormhole](https://github.com/magic-wormhole/magic-wormhole) that lets you easily and safely share files, folders, and text between devices with end-to-end encryption. Built in Go, it compiles to a single native binary with no runtime dependencies and interoperates with other wormhole clients. The magic-wormhole protocol uses a short code (e.g., `7-banana-apple`) that both parties enter to establish a secure transfer — no accounts, no servers storing your data.
+
+### [wormhole.app](https://wormhole.app)
+A browser-based end-to-end encrypted file sharing service from Feross Aboukhadijeh (creator of WebTorrent) and John Hiesey. Files up to 5 GB are stored encrypted on their servers for 24 hours then permanently deleted; files larger than 5 GB transfer peer-to-peer directly from your browser to the recipient. All files are encrypted with 128-bit AES-GCM before they leave the browser, so the server can never read them. Free to use, with a Pro plan planned for larger file limit.
