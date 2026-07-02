@@ -52,7 +52,7 @@ code --install-extension yzhang.markdown-all-in-one \
 
 ### Markdown testing
 
-For testing markdown, I prefer markdown-it due to its adherence to [CommonMark](https://commonmark.org) — arguably the original design spec for Markdown.
+For testing markdown, I prefer [markdown-it](https://markdown-it.github.io) due to its adherence to [CommonMark](https://commonmark.org) — arguably the original design spec for Markdown.
 
 ## Diagramming & Mapping
 
@@ -140,13 +140,56 @@ The gold standard for network protocol analysis. When you need to dig into packe
 ### [HTTP Toolkit](https://httptoolkit.com)
 A modern, developer-friendly alternative to Fiddler/Charles. Open-source and great for intercepting and debugging HTTP from browsers, apps, and more.
 
-### [iperf3](https://iperf.fr)
-A lightweight bandwidth testing tool. Run it between two machines to quickly diagnose network throughput issues. When they say the VPN makes their connection slow, you can use this do to point to point testing to prove, it was the user's home internet.
-
 ### [Postman](https://www.postman.com)
 It's one of the most widely adopted API clients for building, testing, and documenting HTTP requests. Supports environment variables, collections, and automated testing, making it a staple for anyone working with REST or GraphQL APIs. PayPal, Datadog, DocuSign, Microsoft, and others are all part of the Postman API Network and provide easy-to-use collections for testing.
+
+
+## Network Troubleshooting
+
+If you're new to network troubleshooting, you can often find the basics by searching "tool + cheat sheet". Nmap cheat sheet will get you running with the basics, but I encourage you to do your own research.
 
 ### [PingPlotter](https://www.pingplotter.com)
 A graphical traceroute and ping tool that's actively maintained — great for visualizing network latency and packet loss over time. Useful for diagnosing connectivity issues, gaming lag, and ISP problems. The 14 day trial provides enough time to diagnose most issues, but a license is pretty cheap.
 
+### [iperf3](https://iperf.fr)
+A lightweight bandwidth testing tool. Run it between two machines to quickly diagnose network throughput issues. When they say the VPN makes their connection slow, you can use this do to point to point testing to prove, it was the user's home internet.
+
+### [nmap](https://nmap.org)
+The undisputed standard for network scanning — 25+ years old and still actively maintained. Discovers hosts, maps open ports, and identifies services and OS fingerprints. Essential for answering "is this port actually open?" Runs as a single binary with no prerequisites. Available on Windows with the Zenmap GUI. Onboarding a new client? Help find those old boxes on the network hidden in the ceiling somewhere.
+
+### [curl](https://curl.se)
+The internet's most ubiquitous CLI tool, shipping on virtually every OS for 25+ years. If you need to test an HTTP request from a script or terminal, this is the tool. Single binary, no dependencies, transfers easily to any system.
+
+### [testssl.sh](https://github.com/drwetter/testssl.sh)
+A free command-line tool that checks a server's TLS/SSL configuration — ciphers, protocols, and known vulnerabilities (Heartbleed, POODLE, etc.). Single script, no dependencies. Widely recommended in sysadmin communities.
+
+## Security & Recon
+
+### [masscan](https://github.com/robertdavidgraham/masscan)
+The fastest open-source port scanner in existence — capable of transmitting 10 million packets per second and scanning the entire IPv4 internet in under 6 minutes from a single machine. Created by Robert Graham in 2013, its usage and parameters are similar to nmap, but it's designed for internet-scale reconnaissance rather than in-depth scanning of individual hosts. A common workflow is to use masscan for rapid broad discovery of open ports, then hand off the results to nmap for detailed service fingerprinting.
+
+> **Caution:** Do not run this tool against the entire internet all willy-nilly. You will get your home IP blacklisted from A LOT of websites and it will be a pain for everyone on your network.
+
+### [nuclei](https://github.com/projectdiscovery/nuclei)
+A fast, customizable vulnerability scanner built on a simple YAML-based DSL, powered by a community-curated library of templates. It can scan thousands of hosts in minutes, making it a go-to for bug bounty hunters and security researchers.
+
+> **Praise for PD:** Nuclei is part of [ProjectDiscovery](https://github.com/projectdiscovery), an open-source security company that builds an entire suite of tools following the Unix philosophy — each tool does one thing well and they pipe together seamlessly. Other standout tools in the ecosystem include [subfinder](https://github.com/projectdiscovery/subfinder) (passive subdomain enumeration), [httpx](https://github.com/projectdiscovery/httpx) (multi-purpose HTTP probing), and [naabu](https://github.com/projectdiscovery/naabu) (fast port scanner written in Go). A typical recon pipeline: `subfinder` to find subdomains → `httpx` to identify live hosts → `nuclei` to scan for vulnerabilities.
+
+I can't stress enough, they are really good at what they do.
+
+### [Shodan](https://www.shodan.io)
+The world's first search engine for internet-connected devices. Often called "the most dangerous search engine on the internet," Shodan indexes internet-facing devices and services — routers, webcams, industrial control systems, databases — rather than web pages. Invaluable for reconnaissance and understanding your own attack surface. I recommend following them on their socials, at some point every year they usually do a cheap $5 lifetime upgrade. It's a no-brainer pick up if you have any interest in cybersecurity.
+
+### [GreyNoise](https://www.greynoise.io)
+A threat intelligence platform that helps you separate internet "noise" from real threats. GreyNoise collects and labels data on IPs that mass-scan the internet, so you can confidently identify which alerts are background noise vs. actual targeted attacks. Integrates with SIEMs, SOAR, and EDR platforms. The founder Andrew Morris is a bit of an odd guy, but that's what I like about em. Greynoise saves a lot of time during IR response.
+
+### [MaxMind GeoIP](https://www.maxmind.com)
+The creator of GeoIP and the industry standard for IP geolocation data, trusted by businesses for 20+ years and covering 99.9999% of IP addresses in use. Offers downloadable databases (no per-query charges, no network latency) and API web services. Also provides [GeoLite2](https://www.maxmind.com/en/geolite-free-ip-geolocation-data), a free GeoIP dataset built with open source values. No need to pay platforms like IPInfo (still love them, but they are costly).
+
+My advice? Setup a cronjob to download the updated GeoIP Database and tie it into your Elastic Search ingestion pipeline for effective and effcient coarse location tracking. For extra points, throw in ElastAlert2 and write a superman rule (impossible travel) to find out if your users are compromised. 
+
+### [crt.sh](https://crt.sh)
+A web-based Certificate Transparency (CT) log search engine that lets you find SSL/TLS certificates issued for a given domain or organization. An essential passive recon tool — search by domain name, organization, or certificate fingerprint to discover subdomains and exposed assets without generating any traffic against the target. CRT.SH is a reminder to not use Let's Encrypt for internal services even though it makes it simple. You may expose your internal hostnames unexpectedly.
+
+> **Privacy note:** crt.sh searches all CT logs, not just Let's Encrypt — any publicly-trusted certificate from any CA will appear here, because modern browsers require CT log submission for public trust. This is a reminder to be careful using public CAs like Let's Encrypt for internal/non-internet-facing services: your internal hostnames become publicly discoverable. For internal services, consider a private CA like [step-ca](https://smallstep.com/docs/step-ca/) or [HashiCorp Vault](https://www.vaultproject.io/) to avoid exposing internal infrastructure through CT logs.
 
