@@ -1,10 +1,10 @@
 # Tools I Like to Use
 
-A short list of the tools I reach for when troubleshooting, wrangling data, and automating work — plus the essentials on any new machine.
+These are the tools of a generalist, if you need to get something done without a fuss, look here.
 
-A real person (me!) curated this list based on years of experience. I used Kagi Assistant & GLM-5.2 to handle formatting and scraping links for me.
+A real person (me!) curated this list based on years of experience of IT/IR/SOC/Compliance/DevOps. I used Kagi Assistant & GLM-5.2 to handle formatting, scraping links, and fact-checking my memory.
 
-## Troubleshooting, Data Wrangling & Automation
+## Data Wrangling & Automation
 
 ### [jq](https://jqlang.org)
 For manipulating data to and from JSON-based APIs. Also great for templating when combined with [go-task](https://github.com/go-task/task).
