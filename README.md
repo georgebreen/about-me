@@ -113,3 +113,14 @@ I've personally not set this up, but I hear it's quite simple. The streets say e
 ### [OPNsense](https://opnsense.org) / [pfSense](https://www.pfsense.org)
 I like to keep my homelab simple, but if you are interested in a well-supported software-based firewall, I'd pick one of these — leaning towards OPNsense for its open-source nature. There are plenty of guides on how to get it running on Proxmox <kcite></kcite>.
 
+## Backup Software
+
+### [Veeam](https://www.veeam.com)
+Tried and true, verified over 10,000s of installs during my time at an MSP. There are free versions for home PC backup. Buy an external drive, be sure to encrypt your backup, check for data integrity, and run a full backup every two weeks. The peace of mind is priceless.
+
+### [Backblaze](https://www.backblaze.com)
+If you need a dead-easy, set-and-forget backup for your family members, cough up a couple bucks and get a Backblaze subscription. Loved by /r/datahoarders around the world.
+
+### [Amazon S3 Glacier](https://aws.amazon.com/s3/storage-classes/glacier/)
+Are you a true data hoarder? Running out of tape drives? Throw it all in an S3 Glacier bucket. It's the cheapest I've found.
+
