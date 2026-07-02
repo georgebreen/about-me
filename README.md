@@ -320,3 +320,10 @@ Replaces your shell history with a SQLite database, recording full context — t
 - **[Biome](https://biomejs.dev)** — A Rust-based linter and formatter (formerly Rome) that replaces both ESLint and Prettier with a single tool and one config. 97% Prettier-compatible formatting, 500+ lint rules from ESLint, and built-in import sorting.
 - **[proto](https://moonrepo.dev/proto)** — A pluggable multi-language version manager from the moonrepo team (Rust-based). Supports Bun, Deno, Node, Python, Rust, Go, and 800+ tools through a single CLI with a WASM plugin architecture.
 
+## Secure Access & File Transfer
+
+### [Teleport](https://github.com/gravitational/teleport)
+Made by the folks at Rackspace and trusted by the companies that manage your 401k. An identity-aware access proxy that consolidates access to all your infrastructure — SSH, Kubernetes, databases (PostgreSQL, MySQL, MongoDB, CockroachDB), Windows hosts, internal web apps, and even MCP for AI agents — into a single gateway. Uses short-lived certificate-based auth instead of shared SSH keys or static tokens, with MFA and SSO (GitHub, OIDC, SAML) for everything. Ships as a single Go binary, making it easy to deploy alongside the single-binary ethos of the other tools on this list.
+
+### [rymdport](https://github.com/Jacalz/rymdport)
+A cross-platform GUI for [magic-wormhole](https://github.com/magic-wormhole/magic-wormhole) that lets you easily and safely share files, folders, and text between devices with end-to-end encryption. Built in Go, it compiles to a single native binary with no runtime dependencies and interoperates with other wormhole clients. The magic-wormhole protocol uses a short code (e.g., `7-banana-apple`) that both parties enter to establish a secure transfer — no accounts, no servers storing your data.
