@@ -193,3 +193,34 @@ A web-based Certificate Transparency (CT) log search engine that lets you find S
 
 > **Privacy note:** crt.sh searches all CT logs, not just Let's Encrypt — any publicly-trusted certificate from any CA will appear here, because modern browsers require CT log submission for public trust. This is a reminder to be careful using public CAs like Let's Encrypt for internal/non-internet-facing services: your internal hostnames become publicly discoverable. For internal services, consider a private CA like [step-ca](https://smallstep.com/docs/step-ca/) or [HashiCorp Vault](https://www.vaultproject.io/) to avoid exposing internal infrastructure through CT logs.
 
+## Hall of Fame — IT Pro Resources
+
+### [SS64](https://ss64.com)
+Forget how to use diskpart? Trying to find the right DISM command? SS64 has your back. A comprehensive command-line reference for Windows CMD, PowerShell, macOS/Linux bash, and SQL Server.
+
+### [Graham Helton — SSH Cheatsheet](https://grahamhelton.com/blog/ssh-cheatsheet)
+"An Excruciatingly Detailed Guide To SSH (But Only The Things I Actually Find Useful)." SSH tunnels are a red teamer's best friend, but they're also insanely practical for everyday sysadmin work. This guide breaks down port forwarding, jump hosts, and SSH config in a way that actually makes sense.
+
+### [CyberChef](https://gchq.github.io/CyberChef/)
+The Cyber Swiss Army Knife — a web app for encryption, encoding, compression, and data analysis, built by GCHQ. Found some malware? Start decoding that base64 with CyberChef. Runs entirely in your browser with no server-side component, so your data never leaves your machine.
+
+### [Rebane — SSH Secret Menu](https://x.com/rebane2001/status/2031037389347406054)
+Did you know SSH has a little-known secret menu? Rebane is a mystical computer wizard and the reason I have a strong appreciation for CSS — they also built [x86CSS](https://github.com/rebane2001/x86CSS), a working x86 CPU emulator written entirely in CSS with no JavaScript.
+
+### [Office365ITPros — Tony Redmond](https://github.com/12Knocksinna/Office365itpros)
+Tony Redmond has made a career on explaining the dark hidden magic of Microsoft cloud products. This repo holds over 300 PowerShell scripts for interacting with Microsoft 365 and Entra ID, companion to the [Office 365 for IT Pros eBook](https://office365itpros.com) <kcite></kcite><kcite></kcite>.
+
+### [awesome-entra — Merill Fernando](https://github.com/merill/awesome-entra)
+A curated list of awesome Microsoft Entra tools, guides, and resources. Merill Fernando is a Principal Product Manager on the Microsoft Entra team — as far as I'm concerned, he's the Father of Entra. He also runs a [weekly Entra podcast](https://merill.net) and regularly shares Entra ID masterclass labs for free.
+
+### [NirSoft](https://www.nirsoft.net)
+A long legacy of killer freeware utilities for Windows — password recovery, system tools, browser history viewers, network sniffers, and much more. All developed by Nir Sofer. Portable and incredibly useful for troubleshooting.
+
+### [MFCMAPI](https://github.com/microsoft/mfcmapi/releases)
+Pray you never need this tool. Microsoft's own MAPI editor that provides low-level access to Exchange and Outlook stores for troubleshooting the deepest, darkest mailbox corruption issues. Actively maintained — the June 2026 release is current.
+
+### [ForensiT — ProfWiz & TransWiz](https://www.forensit.com/downloads.html)
+User Profile Wizard (ProfWiz) and TransWiz are worth paying for. ProfWiz migrates user profiles between domains (including Azure AD) without copying data — it reconfigures the profile in place. TransWiz transfers a full user profile to a new machine. lifesavers for domain migrations and machine replacements.
+
+### [Nucleus Technologies (Kernel)](https://www.nucleustechnologies.com)
+Don't pay the big guys to migrate Exchange. These people are the real deal — their Kernel-branded tools handle EDB-to-PST conversion, Exchange migration, and PST repair. I've saved countless CEOs with multiple 50GB archives using their tooling.
