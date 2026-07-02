@@ -51,6 +51,8 @@ code --install-extension yzhang.markdown-all-in-one \
      --install-extension davidanson.vscode-markdownlint \
      --install-extension shd101wyy.markdown-preview-enhanced
 ```
+> **Remote Development**: Admittedly, one major benefit of VS Code is its built-in support for attaching to containers and remote machines, which makes both local and remote development seamless. Your editor, extensions, and terminal all run in the context of the remote environment, so there's no need to replicate your setup on every machine. Not my style, but worth mentioning.
+
 
 ### Markdown testing
 
