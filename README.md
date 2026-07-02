@@ -165,6 +165,9 @@ The internet's most ubiquitous CLI tool, shipping on virtually every OS for 25+ 
 ### [testssl.sh](https://github.com/drwetter/testssl.sh)
 A free command-line tool that checks a server's TLS/SSL configuration — ciphers, protocols, and known vulnerabilities (Heartbleed, POODLE, etc.). Single script, no dependencies. Widely recommended in sysadmin communities.
 
+### [Qualys SSL Labs](https://www.ssllabs.com/ssltest/)
+The industry-standard benchmark for TLS configuration. Enter a hostname and SSL Labs performs a deep analysis of your SSL/TLS setup — certificate chain, protocol support, cipher suites, key exchange strength, and known vulnerabilities (Heartbleed, POODLE, ROBOT, etc.) — then assigns an easy-to-understand A–F grade. The grading system makes executives happy when they see they have an A, but between you and me, a B is fine.
+
 ## Security & Recon
 
 ### [masscan](https://github.com/robertdavidgraham/masscan)
@@ -226,3 +229,31 @@ User Profile Wizard (ProfWiz) and TransWiz are worth paying for. ProfWiz migrate
 
 ### [Nucleus Technologies (Kernel)](https://www.nucleustechnologies.com)
 Don't pay the big guys to migrate Exchange. These people are the real deal — their Kernel-branded tools handle EDB-to-PST conversion, Exchange migration, and PST repair. I've saved countless CEOs with multiple 50GB archives using their tooling.
+
+## Sandbox Safety
+
+> **⚠️ Important:** These are public cloud services — anything you submit may be visible to other users or the platform operators. Never submit potentially sensitive documents, internal files, or anything containing PII/credentials. For sensitive analysis, use a local sandbox (e.g., FlareVM, REMnux, or a dedicated VM) instead.
+
+### [urlscan.io](https://urlscan.io)
+A sandbox for the web. Submit a URL and urlscan.io browses to it like a regular user in an isolated environment, recording everything — domains and IPs contacted, resources loaded, redirects, and a screenshot of the rendered page. Free, with a searchable public database of past scans that's invaluable for phishing investigations and threat intelligence.
+
+### [Browserling](https://www.browserling.com)
+An online browser sandbox that lets you interact with real browsers — Chrome, Firefox, Safari, Edge, Opera, even old IE versions — running in isolated virtual machines streamed to your browser. Great for safely opening suspicious links or files without risking your own machine, as well as cross-browser testing. Supports SSH tunnels for testing local apps without deploying them publicly.
+
+### [Dangerzone](https://dangerzone.rocks)
+Take potentially dangerous PDFs, Office documents, or images and convert them into safe PDFs. Originally created by Micah Lee at First Look Media, now maintained by the Freedom of the Press Foundation. Works like a photocopier — it renders your document into raw pixels inside a gVisor sandbox, then reconstructs a clean PDF from those pixels outside the sandbox, stripping any embedded malware or macros. Version 0.10.0 (December 2025) eliminated the Docker Desktop dependency by embedding Podman directly, making it much easier to get running. Open-source (AGPLv3).
+
+### [VirusTotal](https://www.virustotal.com)
+The OG of malware scanning — submit a file, URL, or hash and VirusTotal runs it against 70+ antivirus engines and website scanners simultaneously. Owned by Google (via Chronicle). Great for quick reputation checks, but remember that submitted files may be shared with security vendors.
+
+### [ANY.RUN](https://any.run)
+An interactive malware sandbox — the standout feature is that you can actually control the VM in real-time, clicking through dialog boxes and interacting with the malware as it runs, just like a real user would. Extracts IOCs and maps behavior to MITRE ATT&CK in real-time. Free community tier with public submissions; paid tier for private analysis.
+
+### [Hybrid-Analysis](https://www.hybrid-analysis.com)
+A free automated malware analysis service powered by CrowdStrike's Falcon Sandbox technology. Performs both static and dynamic analysis, generating detailed reports with network activity, API calls, and dropped files. Also includes a searchable public database of previously analyzed samples.
+
+### [Joe Sandbox](https://www.joesandbox.com)
+Deep malware analysis across Windows, macOS, Linux, and Android. Generates some of the most comprehensive reports in the industry — detailed behavioral analysis, network traffic, memory dumps, and signed/unsigned certificate analysis. Free "Cloud Basic" tier (public submissions); "Cloud Pro" for private analysis with full privacy.
+
+### [tria.ge](https://tria.ge)
+A state-of-the-art malware analysis sandbox, now owned by Recorded Future (rebranded as "Recorded Future: Sandbox"). Known for its clean, fast interface and high-volume sample submission capabilities. Performs static and behavioral analysis with TTP mapping and configuration extraction for many malware families. Free individual tier with unlimited uploads (public results); paid tiers for private analysis.
