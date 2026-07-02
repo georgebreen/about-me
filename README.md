@@ -53,3 +53,27 @@ code --install-extension yzhang.markdown-all-in-one \
 ### Markdown testing
 
 For testing markdown, I prefer markdown-it due to its adherence to [CommonMark](https://commonmark.org) — arguably the original design spec for Markdown.
+
+## Diagramming & Mapping
+
+### [Figma](https://www.figma.com)
+I've been following Figma since the early days. Adobe attempted to acquire them, but the deal fell through due to regulatory scrutiny — Figma subsequently went public via IPO instead. What fascinated me most about Figma was that they were one of the first companies to really incorporate [multiplayer collaboration](https://www.figma.com/blog/how-figmas-multiplayer-technology-works/) besides Google Docs.
+
+### [TLDraw](https://www.tldraw.com)
+[Steve Ruiz](https://x.com/steveruizok) seems like a really cool guy — some of his demos show just how expansive and customizable TLDraw is. Take a look at this [ever-growingly prophetic demo](https://examples.tldraw.com/xkcd-dependency).
+
+TLDraw has roots in PartyKit, which is now used in Cloudflare Durable Objects. Go figure — [Sunil Pai](https://blog.partykit.io/posts/everything-is-better-with-friends/), the inventor of PartyKit, currently works at Cloudflare.
+
+### [Excalidraw](https://excalidraw.com)
+Another excellent whiteboard tool. Funny bit of history: Excalidraw runs on Socket.IO, which was invented by Guillermo Rauch — the founder of Vercel.
+
+It's funny to imagine the origins of the Cloudflare vs Vercel rivalry starting out over whiteboard apps.
+
+## Second Brain Tooling
+
+### [Notion](https://www.notion.com)
+Notion is the most extensive platform I've used for building a knowledge repo. The extreme flexibility of everything being blocks allows you to easily build reusable templates, manage user access, and create beautiful dashboards. The only downside is that trying to leave Notion is quite a pain — the export capabilities are quite primitive. It's a cloud product, so I can quickly drop notes in from anywhere and access them from anywhere.
+
+### [Obsidian](https://obsidian.md)
+Obsidian is the gold standard of notes apps. The main flaw is that every non-local storage option has been kind of hacky. This has been changing in recent years as they improve Obsidian Sync and roll out mobile apps.
+
