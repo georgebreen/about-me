@@ -98,3 +98,18 @@ Wrangle CSV files in scripts and search. Blazing-fast data-wrangling toolkit bui
 
 ### [VisiData](https://www.visidata.org)
 A better Excel — terminal based, not for the faint of heart. True data lovers only. Use with WSL2 in windows. Use a modern terminal client as well.
+
+## Remote Access Tooling
+
+### [Tailscale](https://tailscale.com)
+I've recently converted and I'm a huge fan for its ease of use and impressed by its security features. I'd be willing to pay a few bucks to them to keep up the good work. Has SSO, MFA, clean logging <kcite></kcite>.
+
+### [RustDesk](https://rustdesk.com)
+This is a clean alternative to TeamViewer, open-source. I've found it works on every platform I've tried. I've moved my family IT support away from using Chrome Remote Desktop and just have them install RustDesk. If I can coach my grandma to install it, you can too <kcite></kcite>.
+
+### [WireGuard](https://www.wireguard.com)
+I've personally not set this up, but I hear it's quite simple. The streets say easier than OpenVPN management <kcite></kcite>.
+
+### [OPNsense](https://opnsense.org) / [pfSense](https://www.pfsense.org)
+I like to keep my homelab simple, but if you are interested in a well-supported software-based firewall, I'd pick one of these — leaning towards OPNsense for its open-source nature. There are plenty of guides on how to get it running on Proxmox <kcite></kcite>.
+
