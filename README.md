@@ -2,6 +2,8 @@
 
 A short list of the tools I reach for when troubleshooting, wrangling data, and automating work — plus the essentials on any new machine.
 
+A real person (me!) curated this list based on years of experience. I used Kagi Assistant & GLM-5.2 to handle formatting and scraping links for me.
+
 ## Troubleshooting, Data Wrangling & Automation
 
 ### [jq](https://jqlang.org)
