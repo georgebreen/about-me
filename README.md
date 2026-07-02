@@ -257,3 +257,64 @@ Deep malware analysis across Windows, macOS, Linux, and Android. Generates some 
 
 ### [tria.ge](https://tria.ge)
 A state-of-the-art malware analysis sandbox, now owned by Recorded Future (rebranded as "Recorded Future: Sandbox"). Known for its clean, fast interface and high-volume sample submission capabilities. Performs static and behavioral analysis with TTP mapping and configuration extraction for many malware families. Free individual tier with unlimited uploads (public results); paid tiers for private analysis.
+
+## Modern Terminal Tooling & Dev Environments
+
+If you've made it this far down the list. Thanks for reading. We're in the weeds now.
+
+### Terminals
+
+#### [Windows Terminal](https://github.com/microsoft/terminal) + [PowerShell 7](https://github.com/PowerShell/PowerShell)
+The modern Windows terminal experience. Windows Terminal brings tabs, panes, profiles, and GPU-accelerated rendering. Pair it with PowerShell 7 (the cross-platform, .NET-based version) for a shell that finally feels like it belongs in this century.
+
+#### [Ghostty](https://ghostty.org)
+A fast, GPU-accelerated terminal emulator built in Zig by Mitchell Hashimoto (founder of HashiCorp). Prioritizes performance, low latency, and native platform integration without the bloat. A newer project but already making waves for its speed.
+
+### Prompt
+
+#### [Starship](https://starship.rs)
+The minimal, blazing-fast, and infinitely customizable prompt for any shell — Bash, Fish, ZSH, PowerShell, Nushell, and more <kcite></kcite>. Written in Rust, works on any OS, and shows relevant context (Git branch, language versions, k8s context) at a glance <kcite></kcite>.
+
+### Multiplexers
+
+#### [tmux](https://github.com/tmux/tmux) / [Zellij](https://github.com/zellij-org/zellij)
+tmux is the battle-tested, ubiquitous terminal multiplexer — available on virtually every Unix system and remote server you'll ever touch <kcite></kcite>. Zellij is a more modern alternative written in Rust, with sane defaults, on-screen keybindings (no memorization required), floating panes, and a WebAssembly plugin system <kcite></kcite><kcite></kcite>. If you're learning from scratch, Zellij's discoverability is a huge win; if you're working on remote servers, tmux's near-universal availability makes it the safer bet <kcite></kcite>.
+
+### Tooling
+
+#### [LazyVim](https://github.com/LazyVim/LazyVim) + [Neovim](https://neovim.io)
+Vim is not that hard, and it's worth learning due to its prevalence on every Unix distro ever. LazyVim transforms Neovim into a full-featured IDE with sensible defaults, LSP support, and lazy-loaded plugins — without the days of configuration that used to be required. Learn the basics on [vim-hero.com](https://vim-hero.com) or [vim-adventures.com](https://vim-adventures.com).
+
+#### [Atuin](https://github.com/atuinsh/atuin)
+Replaces your shell history with a SQLite database, recording full context — timestamp, hostname, exit code, and working directory — for every command <kcite></kcite>. Gives you fast, searchable history across all terminals and sessions, with optional end-to-end encrypted sync across machines <kcite></kcite>. Host your own sync server or use theirs.
+
+### Modern Unix-like Utilities
+
+- **[broot](https://github.com/Canop/broot)** — A new way to see and navigate directory trees. Think of it as an interactive `tree` + `cd` replacement.
+- **[lsd](https://github.com/lsd-rs/lsd)** — `ls` deluxe. Adds icons, colors, and tree view to your directory listings.
+- **[bat](https://github.com/sharkdp/bat)** — A `cat` clone with syntax highlighting and Git integration.
+- **[eza](https://github.com/eza-community/eza)** — A modern, maintained replacement for `exa` (which was a replacement for `ls`). Adds Git status, colors, and icons.
+- **[zoxide](https://github.com/ajeetdsouza/zoxide)** — A smarter `cd` command that learns your most-used directories. Jump with `z` instead of typing full paths.
+- **[fd](https://github.com/sharkdp/fd)** — A simple, fast, user-friendly alternative to `find`. Sensible defaults, no regex gymnastics required.
+- **[fzf](https://github.com/junegunn/fzf)** — A general-purpose command-line fuzzy finder. Pipe anything into it for instant interactive filtering. Pairs perfectly with zoxide, fd, and shell history.
+- **[ripgrep](https://github.com/BurntSushi/ripgrep)** — The fastest recursive search tool available. Replaces `grep` for most use cases with sane defaults and respect for `.gitignore`.
+- **[zenith](https://github.com/bvaisvil/zenith)** — A system monitor like `htop` but with graphs for CPU, GPU, disk, and network history. Rust-based.
+- **[jc](https://github.com/kellyjonbrazil/jc)** — Converts the output of many CLI tools (ping, ifconfig, netstat, etc.) to JSON. Pipe `jc` before your command and get structured data out. Pairs beautifully with `jq`.
+- **[gdu](https://github.com/dundee/gdu)** — A very fast disk usage analyzer written in Go. Finds what's eating your disk space in seconds.
+- **[gum](https://github.com/charmbracelet/gum)** — A tool for creating glamorous shell scripts. Adds prompts, spinners, and interactive selection menus to your bash scripts with zero effort.
+- **[delta](https://github.com/dandavison/delta)** — A syntax-highlighting pager for `git diff`, `grep`, and `blame` output. Makes Git diffs actually readable. Configure it as your default Git pager.
+- **[toolong](https://github.com/Textualize/toolong)** — A terminal application to view, tail, merge, and search log files (including very large ones). From the Textualize team.
+- **[choose](https://github.com/theryangeary/choose)** — A human-friendly and fast alternative to `awk` and `cut`. Makes column-based text processing approachable.
+- **[jqfmt](https://github.com/noperator/jqfmt)** — A `jq` program formatter and parser. Useful for cleaning up complex `jq` one-liners and making them readable.
+
+### Dev Environment Tools
+
+- **[conda](https://docs.conda.io/projects/conda/)** — For machine learning and data science when you need a full suite of pre-built packages and don't want to fight with native compilation.
+- **[miniconda](https://docs.conda.io/projects/miniconda/)** — For when you just need a nice, lightweight Python environment with conda's package management without the full Anaconda distribution.
+- **[uv](https://github.com/astral-sh/uv)** — An extremely fast Python package installer and resolver written in Rust, from the makers of `ruff`. A better alternative to `venv` — handles virtual environments, package installation, and Python version management all in one tool. 10–100x faster than pip.
+- **[ruff](https://github.com/astral-sh/ruff)** — An extremely fast Python linter and formatter written in Rust, also from Astral. Replaces flake8, isort, pydocstyle, and Black with a single tool and one config. 10–100x faster than existing Python linters — lints an entire large codebase in milliseconds.
+- **[mise](https://mise.jdx.dev)** — A polyglot dev tool manager that handles language runtimes, environment variables, and task running from a single `mise.toml` file. Supports Node, Python, Go, Rust, Terraform, and hundreds of other tools. Basically "uv for every language, not just Python."
+- **[Bun](https://bun.sh)** — An all-in-one JavaScript/TypeScript runtime, package manager, bundler, and test runner written in Zig. Ships as a single dependency-free binary. The "uv moment" for JS.
+- **[Biome](https://biomejs.dev)** — A Rust-based linter and formatter (formerly Rome) that replaces both ESLint and Prettier with a single tool and one config. 97% Prettier-compatible formatting, 500+ lint rules from ESLint, and built-in import sorting.
+- **[proto](https://moonrepo.dev/proto)** — A pluggable multi-language version manager from the moonrepo team (Rust-based). Supports Bun, Deno, Node, Python, Rust, Go, and 800+ tools through a single CLI with a WASM plugin architecture.
+
