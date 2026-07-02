@@ -77,3 +77,24 @@ Notion is the most extensive platform I've used for building a knowledge repo. T
 ### [Obsidian](https://obsidian.md)
 Obsidian is the gold standard of notes apps. The main flaw is that every non-local storage option has been kind of hacky. This has been changing in recent years as they improve Obsidian Sync and roll out mobile apps.
 
+## Media Tools
+
+### [LosslessCut](https://losslesscut.app)
+Extremely useful for trimming shortform clips, for when only a light touch is needed.
+
+### [Shutter Encoder](https://www.shutterencoder.com)
+Uses the wonderful, internet load-bearing software FFmpeg. The middleweight of video editing.
+
+### [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve)
+If you are making a very big project that you want to be movie-grade, bring out the heavyweight.
+
+### [OBS Studio](https://obsproject.com)
+Fully extensible, allows you to create product demos with ease. A great feature is the customizable instant replay feature — it allows you to have always-on recording but save on disc space.
+
+## Spreadsheet Tools
+
+### [qsv](https://github.com/dathere/qsv)
+Wrangle CSV files in scripts and search. Blazing-fast data-wrangling toolkit built in Rust.
+
+### [VisiData](https://www.visidata.org)
+A better Excel — terminal based, not for the faint of heart. True data lovers only. Use with WSL2 in windows. Use a modern terminal client as well.
