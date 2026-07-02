@@ -124,3 +124,29 @@ If you need a dead-easy, set-and-forget backup for your family members, cough up
 ### [Amazon S3 Glacier](https://aws.amazon.com/s3/storage-classes/glacier/)
 Are you a true data hoarder? Running out of tape drives? Throw it all in an S3 Glacier bucket. It's the cheapest I've found.
 
+## Web Troubleshooting
+
+For most basic webpage troubleshooting, you can get by using the built in debugger of Chrome/Firefox. For closed source software, you gotta bring out the big guns.
+
+### [mitmproxy](https://mitmproxy.org)
+An interactive HTTPS proxy that lets you intercept, inspect, and modify HTTP and HTTPS traffic in real time. Great for debugging API calls and seeing exactly what your apps are sending. 
+
+### [Telerik Fiddler](https://www.telerik.com/fiddler)
+A classic web debugging proxy for inspecting HTTP/HTTPS traffic. The go-to for many Windows-based workflows.
+
+### [Wireshark](https://www.wireshark.org)
+The gold standard for network protocol analysis. When you need to dig into packets at every layer of the stack, this is the tool.
+
+### [HTTP Toolkit](https://httptoolkit.com)
+A modern, developer-friendly alternative to Fiddler/Charles. Open-source and great for intercepting and debugging HTTP from browsers, apps, and more.
+
+### [iperf3](https://iperf.fr)
+A lightweight bandwidth testing tool. Run it between two machines to quickly diagnose network throughput issues. When they say the VPN makes their connection slow, you can use this do to point to point testing to prove, it was the user's home internet.
+
+### [Postman](https://www.postman.com)
+It's one of the most widely adopted API clients for building, testing, and documenting HTTP requests. Supports environment variables, collections, and automated testing, making it a staple for anyone working with REST or GraphQL APIs. PayPal, Datadog, DocuSign, Microsoft, and others are all part of the Postman API Network and provide easy-to-use collections for testing.
+
+### [PingPlotter](https://www.pingplotter.com)
+A graphical traceroute and ping tool that's actively maintained — great for visualizing network latency and packet loss over time. Useful for diagnosing connectivity issues, gaming lag, and ISP problems. The 14 day trial provides enough time to diagnose most issues, but a license is pretty cheap.
+
+
