@@ -344,3 +344,26 @@ The lightweight, self-hosted Bitwarden server written in Rust — formerly known
 
 ### [Bitwarden CLI](https://bitwarden.com/help/cli/)
 The official Bitwarden command-line interface — access and manage your vault entirely from the terminal. Search passwords, retrieve items, generate secure passwords, and even pipe credentials into scripts without ever leaving the shell. Supports session-based unlocking so you authenticate once per shell session. Particularly powerful when combined with tools like `fzf` for interactive vault search or `jq` for parsing vault exports.
+
+## Browsers
+
+### [Brave](https://brave.com)
+Brave does good work at helping stop tracking with its built-in ad blocker (Brave Shields) and anti-fingerprinting measures. Chromium-based, so extensions and web compatibility are well supported. A solid default for privacy-conscious browsing without sacrificing performance.
+
+### [Zen Browser](https://zen-browser.app)
+A community-driven Firefox derivative that lives on in the spirit of the discontinued Arc browser — clean, beautiful, and great for reading. Built on the Gecko engine, with a focus on minimalism, vertical tabs, and a distraction-free browsing experience.
+
+### [Orion](https://browser.kagi.com)
+From the Kagi team, Orion is the only browser I know of that has some support for standard browser extensions on macOS/iOS — supporting both Chrome and Firefox extensions on Apple platforms where extension support is typically locked down.
+
+### [Mullvad Browser](https://mullvad.net/en/browser)
+A privacy-focused browser developed in collaboration with the Tor Project, built to minimize tracking and fingerprinting. It has the same anti-fingerprinting protections as the Tor Browser, but connects to the internet via a VPN instead of the Tor network — giving you Tor-level privacy without the speed tradeoffs. All users share a similar fingerprint, making you blend into the crowd rather than stand out. No telemetry, private browsing by default.
+
+### [LibreWolf](https://librewolf.net)
+A privacy-hardened Firefox fork with telemetry, DRM, and tracking removed by default. The Firefox-side equivalent of Brave's privacy-first approach — no accounts, no sponsored shortcuts, just a clean browser.
+
+### [Camoufox](https://github.com/daijro/camoufox)
+A Firefox fork with engine-level anti-fingerprinting written in C++ — modifies the browser at the deepest levels to spoof fingerprints in a way that can't be detected by JavaScript, making it extremely difficult for anti-bot systems to identify. Designed for automation and AI agents that need to bypass bot detection (Cloudflare, Google, etc.). Not a daily driver — this is a specialized tool for when you need a browser that genuinely looks like a real user to even the most aggressive fingerprinting systems.
+
+### [Ladybird](https://ladybird.org)
+A truly independent web browser built from scratch — a new engine, not based on Chromium or Firefox — by Andreas Kling (formerly Apple WebKit). Originally part of SerenityOS, now a standalone nonprofit project. An alpha release is planned for 2026, with beta in 2027 and stable in 2028. I'm following it closely but don't recommend it for daily use yet — it's still pre-alpha.
