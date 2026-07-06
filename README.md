@@ -163,7 +163,6 @@ The undisputed standard for network scanning — 25+ years old and still activel
 
 One of nmap's most powerful features is the [Nmap Scripting Engine (NSE)](https://nmap.org/nsedoc/) — a built-in framework with over 600 Lua scripts that extend nmap from a port scanner into a full vulnerability detection, service enumeration, and network discovery platform. Scripts are categorized by purpose (vuln, brute, default, safe, etc.) and can be run with simple flags like `--script vuln`. A sample of scripts can be found [here](https://github.com/webmaster-exit-1/nmap-nse-scripts-cheat-sheet/blob/main/cheat-sheet.md)
 
-
 ### [curl](https://curl.se)
 The internet's most ubiquitous CLI tool, shipping on virtually every OS for 25+ years. If you need to test an HTTP request from a script or terminal, this is the tool. Single binary, no dependencies, transfers easily to any system.
 
@@ -234,6 +233,13 @@ User Profile Wizard (ProfWiz) and TransWiz are worth paying for. ProfWiz migrate
 
 ### [Nucleus Technologies (Kernel)](https://www.nucleustechnologies.com)
 Don't pay the big guys to migrate Exchange. These people are the real deal — their Kernel-branded tools handle EDB-to-PST conversion, Exchange migration, and PST repair. I've saved countless CEOs with multiple 50GB archives using their tooling.
+
+### [WizTree](https://diskanalyzer.com)
+The best disk space analyzer for Windows — period. WizTree reads the NTFS Master File Table (MFT) directly from the disk, bypassing Windows entirely, which gives it a massive performance advantage over every other tool in this category. Where WinDirStat crawls your drive file by file, WizTree scans an entire drive in seconds — often before WinDirStat has even finished loading.
+
+### [DMDE](https://dmde.com)
+DM Disk Editor and Data Recovery Software — the deep-recovery tool you reach for when everything else has failed. Developed by Dmitry Sidorov since 2006, DMDE uses special algorithms to reconstruct directory structure and recover files in complex cases where other tools fall short: formatted drives, partition manager failures, corrupted file systems, and RAID reconstruction. This tool is up there with Kernel for when your business needs a miracle.
+
 
 ## Sandbox Safety
 
