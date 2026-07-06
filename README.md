@@ -333,3 +333,14 @@ A cross-platform GUI for [magic-wormhole](https://github.com/magic-wormhole/magi
 
 ### [wormhole.app](https://wormhole.app)
 A browser-based end-to-end encrypted file sharing service from Feross Aboukhadijeh (creator of WebTorrent) and John Hiesey. Files up to 5 GB are stored encrypted on their servers for 24 hours then permanently deleted; files larger than 5 GB transfer peer-to-peer directly from your browser to the recipient. All files are encrypted with 128-bit AES-GCM before they leave the browser, so the server can never read them. Free to use, with a Pro plan planned for larger file limit.
+
+## Identity Management
+
+### [Bitwarden](https://bitwarden.com)
+The open-source password manager — end-to-end encrypted, zero-knowledge architecture, and audited by third-party security firms. Offers free personal vaults with unlimited entries across unlimited devices, with affordable premium tiers for advanced features like TOTP, file storage, and hardware key support. I personally pay for bitwarden premium, as it's extremely affordable at less than $2/month, but self hosted open-source options are available. Cross-platform with clients for every browser, OS, and mobile device.
+
+### [Vaultwarden](https://github.com/dani-garcia/vaultwarden)
+The lightweight, self-hosted Bitwarden server written in Rust — formerly known as `bitwarden_rs`. An unofficial but API-compatible alternative implementation that works with all official Bitwarden clients (browser extensions, desktop, iOS, Android). Runs on hardware as modest as a Raspberry Pi using under 50 MB of RAM. Pairs perfectly with Tailscale for secure remote access to your vault from anywhere.
+
+### [Bitwarden CLI](https://bitwarden.com/help/cli/)
+The official Bitwarden command-line interface — access and manage your vault entirely from the terminal. Search passwords, retrieve items, generate secure passwords, and even pipe credentials into scripts without ever leaving the shell. Supports session-based unlocking so you authenticate once per shell session. Particularly powerful when combined with tools like `fzf` for interactive vault search or `jq` for parsing vault exports.
