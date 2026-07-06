@@ -181,7 +181,7 @@ Mark Russinovich and Bryce Cogswell's legendary collection of over 70 Windows tr
 
 Sysmon is so important that Microsoft has begun shipping it as a **native built-in feature in Windows 11 and Windows Server 2025** — essentially "productizing" it due to its critical role in security monitoring. The built-in version supports the same custom configuration files and filtering rules, and events still go to the Windows Event Log <kcite></kcite>.
 
-Pair Sysmon with a community configuration like the [SwiftOnSecurity config](https://github.com/SwiftOnSecurity/sysmon-config) for a solid baseline, or check out the [TrustedSec Sysmon Community Guide](https://github.com/trustedsec/SysmonCommunityGuide) for deeper guidance. I personally prefer https://github.com/olafhartong/sysmon-modular, but all the above are great references.
+Pair Sysmon with a community configuration like the [SwiftOnSecurity config](https://github.com/SwiftOnSecurity/sysmon-config) or [NextronSystems fork](https://github.com/NextronSystems/sysmon-config/tree/master) for a solid baseline. Check out the [TrustedSec Sysmon Community Guide](https://github.com/trustedsec/SysmonCommunityGuide) for deeper guidance. I personally prefer https://github.com/olafhartong/sysmon-modular, but all the above are great references.
 
 If you're doing any kind of security work on Windows and you don't have Sysmon deployed, you're flying blind.
 
