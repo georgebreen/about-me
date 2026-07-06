@@ -161,6 +161,9 @@ A lightweight bandwidth testing tool. Run it between two machines to quickly dia
 ### [nmap](https://nmap.org)
 The undisputed standard for network scanning — 25+ years old and still actively maintained. Discovers hosts, maps open ports, and identifies services and OS fingerprints. Essential for answering "is this port actually open?" Runs as a single binary with no prerequisites. Available on Windows with the Zenmap GUI. Onboarding a new client? Help find those old boxes on the network hidden in the ceiling somewhere.
 
+One of nmap's most powerful features is the [Nmap Scripting Engine (NSE)](https://nmap.org/nsedoc/) — a built-in framework with over 600 Lua scripts that extend nmap from a port scanner into a full vulnerability detection, service enumeration, and network discovery platform. Scripts are categorized by purpose (vuln, brute, default, safe, etc.) and can be run with simple flags like `--script vuln`. A sample of scripts can be found [here](https://github.com/webmaster-exit-1/nmap-nse-scripts-cheat-sheet/blob/main/cheat-sheet.md)
+
+
 ### [curl](https://curl.se)
 The internet's most ubiquitous CLI tool, shipping on virtually every OS for 25+ years. If you need to test an HTTP request from a script or terminal, this is the tool. Single binary, no dependencies, transfers easily to any system.
 
