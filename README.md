@@ -112,7 +112,7 @@ I've recently converted and I'm a huge fan for its ease of use and impressed by 
 This is a clean alternative to TeamViewer, open-source. I've found it works on every platform I've tried. I've moved my family IT support away from using Chrome Remote Desktop and just have them install RustDesk. If I can coach my grandma to install it, you can too <kcite></kcite>.
 
 ### [WireGuard](https://www.wireguard.com)
-I've personally not set this up, but I hear it's quite simple. The streets say easier than OpenVPN management <kcite></kcite>.
+I've personally not set this up, but I hear it's quite simple. The streets say easier than OpenVPN management.
 
 ### [OPNsense](https://opnsense.org) / [pfSense](https://www.pfsense.org)
 I like to keep my homelab simple, but if you are interested in a well-supported software-based firewall, I'd pick one of these — leaning towards OPNsense for its open-source nature. There are plenty of guides on how to get it running on Proxmox <kcite></kcite>.
@@ -173,6 +173,25 @@ A free command-line tool that checks a server's TLS/SSL configuration — cipher
 The industry-standard benchmark for TLS configuration. Enter a hostname and SSL Labs performs a deep analysis of your SSL/TLS setup — certificate chain, protocol support, cipher suites, key exchange strength, and known vulnerabilities (Heartbleed, POODLE, ROBOT, etc.) — then assigns an easy-to-understand A–F grade. The grading system makes executives happy when they see they have an A, but between you and me, a B is fine.
 
 ## Security & Recon
+
+### [Sysinternals Suite](https://learn.microsoft.com/en-us/sysinternals/)
+Mark Russinovich and Bryce Cogswell's legendary collection of over 70 Windows troubleshooting and diagnostic utilities, now maintained by Microsoft. Most tools are single EXEs — no install, no bloat, just unzip and run as Administrator. Standouts include Process Explorer (Task Manager on steroids), Process Monitor (real-time file system and registry activity), Autoruns (what's actually starting up on your machine), and PsExec (remote command execution). The full suite fits on a USB stick — a must-have troubleshooting kit.
+
+**The standout: [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) (System Monitor).** Sysmon is a Windows system service and kernel-level device driver that, once installed, remains resident across reboots to monitor and log detailed system activity to the Windows Event Log — process creations with full command lines, network connections, file creation time changes, driver loads, and more. This is the kind of deep telemetry that Windows doesn't provide by default, and it's the foundation of serious endpoint detection and incident response on Windows.
+
+Sysmon is so important that Microsoft has begun shipping it as a **native built-in feature in Windows 11 and Windows Server 2025** — essentially "productizing" it due to its critical role in security monitoring. The built-in version supports the same custom configuration files and filtering rules, and events still go to the Windows Event Log <kcite></kcite>.
+
+Pair Sysmon with a community configuration like the [SwiftOnSecurity config](https://github.com/SwiftOnSecurity/sysmon-config) for a solid baseline, or check out the [TrustedSec Sysmon Community Guide](https://github.com/trustedsec/SysmonCommunityGuide) for deeper guidance. I personally prefer https://github.com/olafhartong/sysmon-modular, but all the above are great references.
+
+If you're doing any kind of security work on Windows and you don't have Sysmon deployed, you're flying blind.
+
+### [System Informer](https://systeminformer.com)
+The successor to Process Hacker (and Process Explorer by nature) — same team, same codebase, actively maintained under a new name. A free, powerful, multi-purpose tool for monitoring system resources, debugging software, and detecting malware. Provides real-time visibility into processes, services, network connections, GPU usage, and disk activity at a granularity that exposes even the stealthiest runaway processes. Supports light/dark themes, a detailed process tree with parent-child relationships, and plugin extensions.
+
+### [NtObjectManager](https://github.com/googleprojectzero/sandbox-attacksurface-analysis-tools)
+> **Note:** James Forshaw is, frankly, a genius. As a security researcher at Google Project Zero, he has uncovered countless Windows privilege escalation vulnerabilities and built an unmatched toolkit for analyzing Windows internals. He's also the author of [Attacking Network Protocols](https://nostarch.com/networkprotocols) and [Windows Security Internals](https://nostarch.com/windowssecurityinternals). Follow him on [X/Twitter @tiraniddo](https://x.com/tiraniddo), [Mastodon @tiraniddo@infosec.exchange](https://infosec.exchange/@tiraniddo), or his [GitHub @tyranid](https://github.com/tyranid).
+
+A PowerShell module that exposes the Windows NT Object Manager namespace — the internal kernel structure that manages all objects: processes, threads, files, events, sections, tokens, and more. Built on NtApiDotNet, it adds a PowerShell provider and cmdlets that let you navigate and inspect NT objects like a filesystem. Essential for sandbox attack surface analysis, security descriptor auditing, and deep Windows internals debugging.
 
 ### [masscan](https://github.com/robertdavidgraham/masscan)
 The fastest open-source port scanner in existence — capable of transmitting 10 million packets per second and scanning the entire IPv4 internet in under 6 minutes from a single machine. Created by Robert Graham in 2013, its usage and parameters are similar to nmap, but it's designed for internet-scale reconnaissance rather than in-depth scanning of individual hosts. A common workflow is to use masscan for rapid broad discovery of open ports, then hand off the results to nmap for detailed service fingerprinting.
@@ -240,6 +259,29 @@ The best disk space analyzer for Windows — period. WizTree reads the NTFS Mast
 ### [DMDE](https://dmde.com)
 DM Disk Editor and Data Recovery Software — the deep-recovery tool you reach for when everything else has failed. Developed by Dmitry Sidorov since 2006, DMDE uses special algorithms to reconstruct directory structure and recover files in complex cases where other tools fall short: formatted drives, partition manager failures, corrupted file systems, and RAID reconstruction. This tool is up there with Kernel for when your business needs a miracle.
 
+### [Hexacorn](https://www.hexacorn.com/blog/)
+> **Note:** Adam (the person behind Hexacorn) is, like James Forshaw, a genuine pillar of the IT security community — a relentless researcher who has been publishing deep-dive Windows internals and malware analysis content since 2011. His "Beyond good ol' Run key" series alone is a masterclass in Windows persistence mechanisms, now spanning 155+ parts and still going. Follow him on [X/Twitter @Hexacorn](https://x.com/Hexacorn) or his [GitHub @hexacorn](https://github.com/Hexacorn).
+
+Over 15 years of original, previously-unpublished research on Windows internals, reverse engineering, malware analysis, and DFIR <kcite></kcite>. Adam's background spans two decades working with law enforcement, governments, financial authorities, defense contractors, and consulting companies worldwide <kcite></kcite>.
+
+The blog is a treasure trove of obscure Windows knowledge — deep dives into persistence mechanisms (the "Beyond good ol' Run key" series is the definitive reference), LOLBins, atoms, mutexes, events, LNK file internals, and file format analysis. If you're trying to understand *how* malware actually persists on Windows — not just the well-known techniques, but the hundreds of obscure, undocumented ones — Hexacorn is where you end up. Referenced in books, conference presentations, and research by prominent security academics and practitioners worldwide.
+
+His GitHub includes [clean_exports](https://github.com/hexacorn/clean_exports) (for export table analysis) and [cleanset](https://github.com/hexacorn/cleanset) (clean file hashes for goodware baseline comparisons) <kcite></kcite>.
+
+### [Eric Zimmerman's Tools](https://ericzimmerman.github.io)
+> **Note:** Eric Zimmerman is a SANS Principal Instructor, former FBI agent, and two-time SANS DFIR NetWars champion (2014, 2015) who has quite literally redefined digital forensics with his open-source tools — now global standards for cybercrime investigations. He teaches FOR508 (Advanced Digital Forensics, Incident Response and Threat Hunting) and is the award-winning author of *X-Ways Forensics Practitioner's Guide* <kcite></kcite>. His work has directly enabled faster evidence analysis, rescued exploited children, and set new benchmarks in forensic response. If you do DFIR on Windows and you're not using his tools, you're making your life harder than it needs to be.
+
+A suite of 30+ free, open-source Windows forensic tools — all actively maintained (current version 2026.5.0), digitally signed, and built on .NET 9. Most handle locked files (critical when working on live systems), and there's a PowerShell script (`Get-ZimmermanTools`) to download and auto-update everything at once.
+
+### [PingCastle](https://www.pingcastle.com)
+> **Note:** PingCastle was created by **Vincent Le Toux** — a renowned AD security expert, former CERT team lead at ENGIE Group, and contributor to mimikatz itself (he authored the DCSync, setntlm, and DCShadow features). He built PingCastle in his spare time, deployed it in a real-world enterprise setting at Vinci, and shaped it into the go-to tool for Active Directory security assessment. Follow him on [X/Twitter @mysmartlogon](https://x.com/mysmartlogon) or [GitHub @vletoux](https://github.com/vletoux).
+
+"Get Active Directory Security at 80% in 20% of the time." PingCastle is a free, open-source tool that evaluates your AD security posture using a risk-based maturity framework inspired by CMMI. It maps known vulnerabilities exposed by tools like mimikatz and resources like adsecurity.org into actionable, prioritized recommendations. Produces a health check report with a letter grade (A–F) across multiple risk categories, a visual map of your domain, and immediate remediation steps. Now also supports Entra ID assessments. If you're responsible for an AD environment and you haven't run PingCastle, do yourself a favor and take it for a spin.
+
+### [mimikatz](https://github.com/gentilkiwi/mimikatz)
+> **Note:** Benjamin Delpy (gentilkiwi) is, without exaggeration, the godfather of modern Windows credential attack research. He originally wrote mimikatz to learn C and experiment with Windows security. It went on to expose and popularize virtually every major Windows credential attack technique: pass-the-hash, pass-the-ticket, Golden Tickets, Kerberoasting, DCSync, and more. Every blue teamer and defender owes him a debt — mimikatz forced Microsoft to confront and patch decades of weak credential handling in Windows. He currently works as Head of Security Services at Banque de France. Follow him on [X/Twitter @gentilkiwi](https://x.com/gentilkiwi) or [GitHub @gentilkiwi](https://github.com/gentilkiwi).
+
+A little tool to play with Windows security — and the single most influential credential dumping tool ever created. mimikatz extracts plaintext passwords, hashes, PIN codes, and Kerberos tickets from memory, and can perform pass-the-hash, pass-the-ticket, Golden Ticket, and DCSync attacks. Written in C, it's the tool that red teamers reach for first and blue teamers study to understand what they're up against. The GitHub repo has 21.7k stars and is still maintained. Not a tool you deploy in production — a tool you learn from, test your defenses against, and respect.
 
 ## Sandbox Safety
 
