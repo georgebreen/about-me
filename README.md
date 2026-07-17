@@ -128,6 +128,15 @@ If you need a dead-easy, set-and-forget backup for your family members, cough up
 ### [Amazon S3 Glacier](https://aws.amazon.com/s3/storage-classes/glacier/)
 Are you a true data hoarder? Running out of tape drives? Throw it all in an S3 Glacier bucket. It's the cheapest I've found.
 
+## Email Troubleshooting
+
+### [MXToolbox](https://mxtoolbox.com)
+The Swiss Army knife for email deliverability. MXToolbox SuperTool lets you run DNS lookups, blacklist checks, SMTP diagnostics, and SPF/DKIM/DMARC validation from a single web interface. Start with the blacklist check — enter your domain or IP and it checks 100+ DNS-based blacklists in seconds to see if you're flagged. The SMTP Diagnostic tool walks a mail server's EHLO handshake, STARTTLS, and authentication to pinpoint where delivery is breaking down. Free tier covers most day-to-day needs; paid Monitor service for ongoing alerting.
+
+### [dmarcian](https://dmarcian.com)
+DMARC is the protocol that tells receiving servers what to do when SPF or DKIM alignment fails — and dmarcian is the tool that makes it manageable. Founded by Tim Draegen, one of the original co-authors of the DMARC specification. Upload your DMARC aggregate (RUA) XML reports and dmarcian's Domain Overview Dashboard shows you which sources are sending email as you, which are passing SPF/DKIM alignment, and which are failing — visually, in a way that actually makes sense. Free for a single domain; paid tiers for multi-domain visibility and ongoing monitoring <kcite></kcite>. If you're responsible for email deliverability and haven't implemented DMARC, start here.
+
+
 ## Web Troubleshooting
 
 For most basic webpage troubleshooting, you can get by using the built in debugger of Chrome/Firefox. For closed source software, you gotta bring out the big guns.
