@@ -181,6 +181,23 @@ A free command-line tool that checks a server's TLS/SSL configuration — cipher
 ### [Qualys SSL Labs](https://www.ssllabs.com/ssltest/)
 The industry-standard benchmark for TLS configuration. Enter a hostname and SSL Labs performs a deep analysis of your SSL/TLS setup — certificate chain, protocol support, cipher suites, key exchange strength, and known vulnerabilities (Heartbleed, POODLE, ROBOT, etc.) — then assigns an easy-to-understand A–F grade. The grading system makes executives happy when they see they have an A, but between you and me, a B is fine.
 
+### [Wireshark](https://www.wireshark.org) / [tshark](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html)
+The world's most widely used network protocol analyzer — and for good reason. Wireshark captures live traffic from any interface, decodes over 3,000 protocols, and lets you drill into individual packets with a level of detail that borders on absurd. If you've ever needed to figure out *exactly* what's happening on the wire — a slow TLS handshake, a DNS resolution loop, a misbehaving RPC call — Wireshark is where you end up.
+
+**tshark** is the CLI counterpart — same decoding engine, no GUI, perfect for remote servers and scripted analysis. Pipe traffic through tshark, filter with display filters, and export to JSON for downstream processing with `jq`. Captures can be taken with tshark on a headless server and opened in Wireshark on your desktop — the `.pcap` format is universal.
+
+A few power-user tips:
+- Use **capture filters** (BPF syntax) *before* capture to reduce noise: `tcp port 443 and host 10.0.0.5`
+- Use **display filters** *after* capture to drill down: `http.request.method == "POST"` or `tls.handshake.type == 1`
+- **Follow TCP Stream** (right-click a packet → Follow → TCP Stream) reassembles a full conversation into a single readable view — invaluable for debugging application-layer issues
+- Wireshark can decode **TLS traffic** if you provide the session keys (set `SSLKEYLOGFILE` environment variable in your browser/app)
+- For encrypted traffic you can't decrypt, the **TLS dissector** still shows you SNI, certificate details, cipher negotiation, and ALPN — often enough to diagnose the problem
+
+Cross-platform (Windows, macOS, Linux), open-source (GPLv2), and actively maintained — Wireshark 4.5.0 shipped in 2025. The project began in 1998 as Ethereal and was renamed Wireshark in 2006 due to trademark issues. Supported by the Wireshark Foundation and a global community of contributors.
+
+Pairs with `nmap` for discovery, `testssl.sh` for TLS auditing, and `tcpdump` for lightweight captures on systems where Wireshark isn't installed.
+****
+
 ## Security & Recon
 
 ### [Sysinternals Suite](https://learn.microsoft.com/en-us/sysinternals/)
